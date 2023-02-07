@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="" />
+    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="First Commit just added compression and encryption functionality">
+      <change afterPath="$PROJECT_DIR$/Assets/credentials.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileDecryptionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileDecryptionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileEncryptionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileEncryptionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashPackage/SHA512_HashGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashPackage/SHA512_HashGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2LPj28ygZg6gUkvBqteyPN3BmYb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/spectrewolf8/MyJavaProjects/ExileFileVault/Assets",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Assets" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -28,6 +59,37 @@
       <option name="presentableId" value="Default" />
       <updated>1675779405123</updated>
     </task>
+    <task id="LOCAL-00001" summary="First Commit just added compression and encryption functionality">
+      <created>1675781639256</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675781639256</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First Commit just added compression and encryption functionality">
+      <created>1675781658760</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675781658760</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="First Commit just added compression and encryption functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit just added compression and encryption functionality" />
   </component>
 </project>
