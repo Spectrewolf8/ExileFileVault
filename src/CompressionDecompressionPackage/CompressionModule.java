@@ -18,6 +18,7 @@ public class CompressionModule {
     private int compressionLevel = 2;
     private ProgressMonitor progressMonitor;
     private ZipFile zipFile;
+
     public void setCompressionLevel(int compressionLevel) {
         this.compressionLevel = compressionLevel;
     }
@@ -34,7 +35,7 @@ public class CompressionModule {
             zipParameters.setCompressionMethod(CompressionMethod.DEFLATE);
 
             // setting compression level of files
-            if(compressionLevel == 0){
+            if (compressionLevel == 0) {
                 zipParameters.setCompressionLevel(CompressionLevel.FASTEST);
             } else if (compressionLevel == 1) {
                 zipParameters.setCompressionLevel(CompressionLevel.NORMAL);
@@ -72,8 +73,6 @@ public class CompressionModule {
                 zipFile.addFolder(fileToProcess.getFile(), zipParameters);
             }
 
-
-
             zipFile.setRunInThread(false);//ending zipfile's thread
 
             // Print the destination in the local directory
@@ -89,7 +88,6 @@ public class CompressionModule {
         }
 
     }
-
 
 
     public void runCompressionProgressStats() throws InterruptedException {
@@ -114,9 +112,9 @@ public class CompressionModule {
         zipFile.setRunInThread(false);//ending zipfile's thread
 
     }
-
-
-
+    public ZipFile getZipFile() {
+        return zipFile;
+    }
 
 }
 

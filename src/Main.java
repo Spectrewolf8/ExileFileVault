@@ -1,5 +1,6 @@
 import FilesProcessorPackage.FileVaultProcessor;
 import FilesProcessorPackage.FilesBrowser;
+import FilesProcessorPackage.FilesInVaultManager;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -8,12 +9,26 @@ import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, IOException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException {
-        //FileVaultProcessor fileVaultProcessor = new FileVaultProcessor();
-        //FilesBrowser filesBrowser = new FilesBrowser();
-        ////fileVaultProcessor.vault(filesBrowser.browseFile(),"password");
-        //fileVaultProcessor.unVault("/home/spectrewolf8/MyJavaProjects/ExileFileVault/60eabbd089c@12669701186373ENC.-inc","/home/spectrewolf8/Downloads/Arch users of reddit, you may like this wallpaper I made of our beloved distro! - Imgur (4th copy).jpg","password");
+        FileVaultProcessor fileVaultProcessor = new FileVaultProcessor();
+        FilesBrowser filesBrowser = new FilesBrowser();
+        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
+        filesBrowser = new FilesBrowser();
+        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
+        filesBrowser = new FilesBrowser();
+        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
+//        filesBrowser = new FilesBrowser();
+//        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
+        new FilesInVaultManager().listFilesInVault();
+//        System.out.println("Enter index of file to unvault");
+//        int index = new Scanner(System.in).nextInt();
+//        fileVaultProcessor.unVault(index,"password");
+//        new FilesInVaultManager().listFilesInVault();
+
+        //fileVaultProcessor.unVault("D:\\My Codes\\Java\\OOSE Semester Project FileHub\\ExileFileVault\\192695a757c@37391071708900ENC.-inc","Shit\\Unvaulted.jpg","password");
+        System.exit(0);
     }
 }

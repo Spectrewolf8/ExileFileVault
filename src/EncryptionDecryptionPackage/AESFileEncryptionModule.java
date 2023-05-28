@@ -21,7 +21,7 @@ public class AESFileEncryptionModule {
     public void encryptWitEcb(FileToEncrypt fileToEncrypt, String password) throws IOException,
             NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
             IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException {
-        System.out.println("Starting encryption of "+fileToEncrypt+" with aes");
+        System.out.println("Starting encryption of " + fileToEncrypt + " with aes");
         byte[] key = (SHA512_HashGenerator.generateHash(password).substring(0, 16)).getBytes(StandardCharsets.UTF_8);// 32 byte = 256 bit key length
         byte[] initialVector = (SHA512_HashGenerator.generateHash(password).substring(16, 32)).getBytes(StandardCharsets.UTF_8);
         System.out.println(SHA512_HashGenerator.generateHash(password).substring(0, 16) + "  " + SHA512_HashGenerator.generateHash(password).substring(16, 32));
@@ -46,7 +46,7 @@ public class AESFileEncryptionModule {
                 bos.write(outputBuffer);
 
         }
-        System.out.println("Done with encryption of "+fileToEncrypt+" with aes");
+        System.out.println("Done with encryption of " + fileToEncrypt + " with aes");
     }
 
 }

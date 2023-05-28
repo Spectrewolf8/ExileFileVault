@@ -5,18 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="First Commit just added compression and encryption functionality">
-      <change afterPath="$PROJECT_DIR$/Assets/credentials.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shit/Unvaulted.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shit/Unvaulted/IMG_20211026_132039_263_2 - Copy - Copy (4).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FilesInVaultManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileDecryptionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileDecryptionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompressionDecompressionPackage/CompressionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompressionDecompressionPackage/CompressionModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileEncryptionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileEncryptionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HashPackage/SHA512_HashGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashPackage/SHA512_HashGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,11 +50,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "/home/spectrewolf8/MyJavaProjects/ExileFileVault/Assets",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -49,6 +64,20 @@
       <recent name="$PROJECT_DIR$/Assets" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ExileFileVault" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

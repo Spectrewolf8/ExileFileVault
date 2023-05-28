@@ -21,6 +21,7 @@ public class FileToProcess implements Serializable {
     private File file;
     private String fileSize;
     private String fileName;
+    private String fileType;
 
     private String fileExtension;
 
@@ -35,6 +36,7 @@ public class FileToProcess implements Serializable {
         stringFileModifiedTime = simpleDateFormat.format((fileModifiedTime.toMillis()));
         fileSize = String.valueOf(fileAttributes.size());
         fileName = file.getName();
+        fileType = Files.probeContentType(absoluteFilePath);
 
     }
 
@@ -78,5 +80,9 @@ public class FileToProcess implements Serializable {
         } else {
             return fileName.substring(dotIndex + 1);
         }
+    }
+
+    public String getFileType() {
+        return fileType;
     }
 }
