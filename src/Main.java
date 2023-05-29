@@ -16,10 +16,10 @@ public class Main {
         FileVaultProcessor fileVaultProcessor = new FileVaultProcessor();
         FilesBrowser filesBrowser = new FilesBrowser();
         fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
-        filesBrowser = new FilesBrowser();
-        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
-        filesBrowser = new FilesBrowser();
-        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
+//        filesBrowser = new FilesBrowser();
+//        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
+//        filesBrowser = new FilesBrowser();
+//        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
 //        filesBrowser = new FilesBrowser();
 //        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
         new FilesInVaultManager().listFilesInVault();

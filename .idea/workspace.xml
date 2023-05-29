@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="First Commit just added compression and encryption functionality">
+    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="second commit just add more functionality">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/46f4e914abc@1813857609800ENC.-inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/52817e3db7c@1944894555200ENC.-inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/91ddd75936c@1694149083700ENC.-inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/91ddd75936c@1757709145100ENC.-inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/91ddd75936c@1931542316000ENC.-inc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Shit/Unvaulted.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Shit/Unvaulted/IMG_20211026_132039_263_2 - Copy - Copy (4).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FilesInVaultManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompressionDecompressionPackage/CompressionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompressionDecompressionPackage/CompressionModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileEncryptionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EncryptionDecryptionPackage/AESFileEncryptionModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesProcessorPackage/FilesInVaultManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FilesInVaultManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,22 +44,22 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/spectrewolf8/MyJavaProjects/ExileFileVault/Assets",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/spectrewolf8/MyJavaProjects/ExileFileVault/Assets&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Assets" />
@@ -102,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675781658760</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="second commit just add more functionality">
+      <created>1685307574816</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685307574816</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Commit just added compression and encryption functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit just added compression and encryption functionality" />
+    <MESSAGE value="second commit just add more functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit just add more functionality" />
   </component>
 </project>

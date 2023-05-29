@@ -41,12 +41,19 @@ public class FilesInVaultManager {
     List<LogFile> filesInVault = new ArrayList<>();
 
 
-    public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) {
-        readObjectsFromFile();
-        LogFile fileToAdd = new LogFile(fileToProcess, fileOriginPath, fileDestinationPath, passwordHash);
-        filesInVault.add(fileToAdd);
-        writeObjectsToFile();
-    }
+//    public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) {
+//        readObjectsFromFile();
+//        LogFile fileToAdd = new LogFile(fileToProcess, fileOriginPath, fileDestinationPath, passwordHash);
+//        filesInVault.add(fileToAdd);
+//        writeObjectsToFile();
+//    }
+public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) {
+    LogFile fileToAdd = new LogFile(fileToProcess, fileOriginPath, fileDestinationPath, passwordHash);
+    filesInVault.add(fileToAdd);
+    writeObjectsToFile();
+    // No need to writeObjectsToFile() here
+}
+
 
     public void removeFileFromVault(int index) {
         readObjectsFromFile();
@@ -63,38 +70,62 @@ public class FilesInVaultManager {
         readObjectsFromFile();
         return filesInVault;
     }
+
     public void listFilesInVault() {
         readObjectsFromFile();
+        System.out.println(filesInVault.size());
+
         for (int i = 0; i < filesInVault.size(); i++) {
             System.out.println(i + ". " + filesInVault.get(i).getFileToProcess().getFileName());
         }
     }
 
     public void writeObjectsToFile() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(logFilePath))) {
-            oos.writeObject(filesInVault);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(logFilePath, true))) {
+            for (LogFile logFile : filesInVault) {
+                oos.writeObject(logFile);
+            }
             System.out.println("Objects written to the file successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    //    public void readObjectsFromFile() {
+//        filesInVault.clear(); // Clear the existing list before reading the objects
+//        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(logFilePath))) {
+//            System.out.println("Reading objects from the file:");
+//
+//            while (true) {
+//                try {
+//                    LogFile logFile = (LogFile) ois.readObject();
+//                    filesInVault.add(logFile);
+//                    System.out.println(logFile);
+//                } catch (EOFException e) {
+//                    break; // Reached end of file
+//                }
+//            }
+//        } catch (IOException | ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
     public void readObjectsFromFile() {
+        filesInVault.clear(); // Clear the existing list before reading the objects
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(logFilePath))) {
             System.out.println("Reading objects from the file:");
 
-            // Read and display objects from the file
             while (true) {
                 try {
-                    List<LogFile> readLogFiles = (List<LogFile>) ois.readObject();
-                    System.out.println(readLogFiles);
+                    LogFile logFile = (LogFile) ois.readObject();
+                    filesInVault.add(logFile);
                 } catch (EOFException e) {
-                    break;  // Reached end of file
+                    break; // Reached end of file
                 }
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
+
 
 }
