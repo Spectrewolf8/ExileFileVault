@@ -12,17 +12,17 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, IOException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException {
-        FileVaultProcessor fileVaultProcessor = new FileVaultProcessor();
-        FilesBrowser filesBrowser = new FilesBrowser();
-        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
+    public static void main(String[] args) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, IOException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException, ClassNotFoundException {
+//        FileVaultProcessor fileVaultProcessor = new FileVaultProcessor();
+//        FilesBrowser filesBrowser = new FilesBrowser();
+//        fileVaultProcessor.vault(filesBrowser.browseFile(), "password", false);
+//        filesBrowser = new FilesBrowser();
+//        fileVaultProcessor.vault(filesBrowser.browseFile(), "password", false);
+//        filesBrowser = new FilesBrowser();
+//        fileVaultProcessor.vault(filesBrowser.browseFile(), "password", false);
 //        filesBrowser = new FilesBrowser();
 //        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
-//        filesBrowser = new FilesBrowser();
-//        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
-//        filesBrowser = new FilesBrowser();
-//        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
-        new FilesInVaultManager().listFilesInVault();
+        new FilesInVaultManager().printFilesList();
 //        System.out.println("Enter index of file to unvault");
 //        int index = new Scanner(System.in).nextInt();
 //        fileVaultProcessor.unVault(index,"password");

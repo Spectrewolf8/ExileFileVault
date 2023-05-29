@@ -41,56 +41,87 @@ public class FilesInVaultManager {
     List<LogFile> filesInVault = new ArrayList<>();
 
 
-//    public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) {
+    //    public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) {
 //        readObjectsFromFile();
 //        LogFile fileToAdd = new LogFile(fileToProcess, fileOriginPath, fileDestinationPath, passwordHash);
 //        filesInVault.add(fileToAdd);
 //        writeObjectsToFile();
 //    }
-public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) {
-    LogFile fileToAdd = new LogFile(fileToProcess, fileOriginPath, fileDestinationPath, passwordHash);
-    filesInVault.add(fileToAdd);
-    writeObjectsToFile();
-    // No need to writeObjectsToFile() here
-}
+    public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) throws IOException, ClassNotFoundException {
+        readFilesListFromFile(); // Read the existing files from the file
 
+        LogFile fileToAdd = new LogFile(fileToProcess, fileOriginPath, fileDestinationPath, passwordHash);
+        filesInVault.add(fileToAdd); // Add the new file to the list
 
-    public void removeFileFromVault(int index) {
-        readObjectsFromFile();
-        filesInVault.remove(index);
-        writeObjectsToFile();
+        writeFilesListToFile(); // Write the updated list back to the file
     }
 
-    public LogFile getFileAtIndex(int index) {
-        readObjectsFromFile();
+
+    public void removeFileFromVault(int index) throws IOException, ClassNotFoundException {
+        readFilesListFromFile();
+        filesInVault.remove(index);
+        writeFilesListToFile();
+    }
+
+    public LogFile getFileAtIndex(int index) throws IOException, ClassNotFoundException {
+        readFilesListFromFile();
         return filesInVault.get(index);
     }
 
-    public List<LogFile> getFilesInVault() {
-        readObjectsFromFile();
+    public List<LogFile> getFilesInVault() throws IOException, ClassNotFoundException {
+        readFilesListFromFile();
         return filesInVault;
     }
 
-    public void listFilesInVault() {
-        readObjectsFromFile();
+    public void listFilesInVault() throws IOException, ClassNotFoundException {
+        readFilesListFromFile();
         System.out.println(filesInVault.size());
-
         for (int i = 0; i < filesInVault.size(); i++) {
-            System.out.println(i + ". " + filesInVault.get(i).getFileToProcess().getFileName());
+            System.out.println(i + ". " + filesInVault.get(i).getFileOriginPath());
         }
     }
 
-    public void writeObjectsToFile() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(logFilePath, true))) {
-            for (LogFile logFile : filesInVault) {
-                oos.writeObject(logFile);
-            }
-            System.out.println("Objects written to the file successfully.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
+//    public void writeObjectsToFile() {
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(logFilePath, true))) {
+//            for (LogFile logFile : filesInVault) {
+//                oos.writeObject(logFile);
+//            }
+//            System.out.println("Objects written to the file successfully.");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    public void writeObjectsToFile() {
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(logFilePath))) {
+//            for (LogFile logFile : filesInVault) {
+//                oos.writeObject(logFile);
+//            }
+//            System.out.println("Objects written to the file successfully.");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//
+//    public void readObjectsFromFile() {
+//        filesInVault.clear(); // Clear the existing list before reading the objects
+//        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(logFilePath))) {
+//            System.out.println("Reading objects from the file:");
+//
+//            while (true) {
+//                try {
+//                    LogFile logFile = (LogFile) ois.readObject();
+//                    filesInVault.add(logFile);
+//                    System.out.println("File added to vault: " + logFile.getFileOriginPath());
+//                } catch (EOFException e) {
+//                    break; // Reached end of file
+//                }
+//            }
+//        } catch (IOException | ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
     //    public void readObjectsFromFile() {
 //        filesInVault.clear(); // Clear the existing list before reading the objects
 //        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(logFilePath))) {
@@ -109,23 +140,62 @@ public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, S
 //            e.printStackTrace();
 //        }
 //    }
-    public void readObjectsFromFile() {
-        filesInVault.clear(); // Clear the existing list before reading the objects
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(logFilePath))) {
-            System.out.println("Reading objects from the file:");
 
-            while (true) {
-                try {
-                    LogFile logFile = (LogFile) ois.readObject();
-                    filesInVault.add(logFile);
-                } catch (EOFException e) {
-                    break; // Reached end of file
-                }
+    public void deleteFileAtIndex(int index) {
+
+
+        try {
+            // Read the ArrayList from the binary file
+            readFilesListFromFile();
+
+            // Print the original ArrayList
+            System.out.println("Original ArrayList:");
+            printFilesList();
+
+            // Index of the element to be deleted
+
+            // Check if the index is within bounds
+            if (index >= 0 && index < filesInVault.size()) {
+                // Remove the element from the ArrayList
+                filesInVault.remove(index);
+
+                // Update the binary file with the modified ArrayList
+                writeFilesListToFile();
+
+                // Print the updated ArrayList
+                System.out.println("Updated ArrayList:");
+                printFilesList();
+            } else {
+                System.out.println("Invalid index to delete: " + index);
             }
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    private void readFilesListFromFile() throws IOException, ClassNotFoundException {
+        try (FileInputStream fis = new FileInputStream(logFilePath);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            filesInVault = (ArrayList<LogFile>) ois.readObject();
+        }
+    }
+
+    private void writeFilesListToFile() throws IOException {
+        try (FileOutputStream fos = new FileOutputStream(logFilePath);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(filesInVault);
+        }
+    }
+
+    public void printFilesList() throws IOException, ClassNotFoundException {
+        readFilesListFromFile();
+        System.out.println(filesInVault.size());
+        System.out.println(filesInVault);
+
+        for (LogFile element : filesInVault) {
+            //element.getFileToProcess().printAllProperties();
+            System.out.println(element.getFileToProcess());
+        }
+    }
 
 }

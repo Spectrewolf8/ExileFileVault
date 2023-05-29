@@ -37,6 +37,7 @@ public class FileToProcess implements Serializable {
         fileSize = String.valueOf(fileAttributes.size());
         fileName = file.getName();
         fileType = Files.probeContentType(absoluteFilePath);
+        fileExtension = getFileExtension();
 
     }
 
@@ -81,7 +82,14 @@ public class FileToProcess implements Serializable {
             return fileName.substring(dotIndex + 1);
         }
     }
-
+    public void printAllProperties(){
+        System.out.println("File name: " + fileName);
+        System.out.println("File extension: " + getFileExtension());
+        System.out.println("File size: " + fileSize);
+        System.out.println("File type: " + fileType);
+        System.out.println("File creation time: " + stringFileCreationTime);
+        System.out.println("File modified time: " + stringFileModifiedTime);
+    }
     public String getFileType() {
         return fileType;
     }

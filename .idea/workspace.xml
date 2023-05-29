@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="second commit just add more functionality">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/46f4e914abc@1813857609800ENC.-inc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/52817e3db7c@1944894555200ENC.-inc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/91ddd75936c@1694149083700ENC.-inc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/91ddd75936c@1757709145100ENC.-inc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/91ddd75936c@1931542316000ENC.-inc" afterDir="false" />
+    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="Third commit, Issues with file read and write need to be sorted out">
+      <change afterPath="$PROJECT_DIR$/2079fe3ddfc@7631818972300ENC.-inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/42ff14ec7ec@7623711787300ENC.-inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/42ff14ec7ec@7640676152400ENC.-inc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Shit/Unvaulted.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Shit/Unvaulted/IMG_20211026_132039_263_2 - Copy - Copy (4).jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FileVaultProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FilesProcessorPackage/FilesInVaultManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesProcessorPackage/FilesInVaultManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -110,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685307574816</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Third commit, Issues with file read and write need to be sorted out">
+      <created>1685334081511</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685334081511</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +134,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Commit just added compression and encryption functionality" />
     <MESSAGE value="second commit just add more functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit just add more functionality" />
+    <MESSAGE value="Third commit, Issues with file read and write need to be sorted out" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit, Issues with file read and write need to be sorted out" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

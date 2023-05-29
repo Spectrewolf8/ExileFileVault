@@ -24,8 +24,8 @@ public class FileVaultProcessor {
     private String encryptedDestinationPath;
     private FilesInVaultManager filesInVaultManager = new FilesInVaultManager();
 
-    public void vault(String filePathToVault, String Password, Boolean requireCompression) throws IOException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException {
-
+    public void vault(String filePathToVault, String Password, Boolean requireCompression) throws IOException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException, ClassNotFoundException {
+        FileToProcess fileBeingAddedToVault = new FileToProcess(filePathToVault);
         if (requireCompression) {
             FileToCompress fileToCompress = new FileToCompress(filePathToVault, "tempCompressedFileToEncrypt.zip");
             System.out.println("tempCompressedFileToEncrypt.zip created");
@@ -49,7 +49,8 @@ public class FileVaultProcessor {
             //Deleting Compressed File
             FileToProcess fileToDelete = new FileToProcess("tempCompressedFileToEncrypt.zip");
             fileToDelete.getFile().delete();
-            filesInVaultManager.addFileToVault(new FileToProcess(filePathToVault), filePathToVault, encryptedDestinationPath, SHA512_HashGenerator.generateHash(Password));
+
+            filesInVaultManager.addFileToVault(fileBeingAddedToVault, filePathToVault, encryptedDestinationPath, SHA512_HashGenerator.generateHash(Password));
         } else {
 
             //encrypting file
@@ -63,7 +64,7 @@ public class FileVaultProcessor {
             FileToProcess fileToProcess_Hide = new FileToProcess(encryptedDestinationPath);// creating a file for hiding process, then hiding it and making it read only to add a little more security
             Files.setAttribute(fileToProcess_Hide.getAbsoluteFilePath(), "dos:hidden", true);
             fileToProcess_Hide.getFile().setReadOnly();
-            filesInVaultManager.addFileToVault(new FileToProcess(filePathToVault), filePathToVault, encryptedDestinationPath, SHA512_HashGenerator.generateHash(Password));
+            filesInVaultManager.addFileToVault(fileBeingAddedToVault, filePathToVault, encryptedDestinationPath, SHA512_HashGenerator.generateHash(Password));
 
         }
 
@@ -114,7 +115,7 @@ public class FileVaultProcessor {
         fileToDelete0.getFile().delete();
     }
 
-    public void unVault(int index, String password) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, IOException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException {
+    public void unVault(int index, String password) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, IOException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException, ClassNotFoundException {
         LogFile fileFromLogs = filesInVaultManager.getFileAtIndex(index);
         unVault(fileFromLogs.getFileDestinationPath(), fileFromLogs.getFileOriginPath(), password);
         filesInVaultManager.removeFileFromVault(index);
