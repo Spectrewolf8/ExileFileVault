@@ -15,20 +15,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BatchFileRenamer {
-    private static final String HASH_ALGORITHM = "SHA-512";
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Batch File Renamer");
-        System.out.println("==================");
-        System.out.println("Enter the directory path:");
-        String directoryPath = scanner.nextLine();
-
-        File directory = new File(directoryPath);
-        if (!directory.isDirectory()) {
-            System.out.println("Invalid directory path.");
-            return;
-        }
+    public void test() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Batch File Renamer");
+//        System.out.println("==================");
+//        System.out.println("Enter the directory path:");
+//        String directoryPath = scanner.nextLine();
+//
+//        File directory = new File(directoryPath);
+//        if (!directory.isDirectory()) {
+//            System.out.println("Invalid directory path.");
+//            return;
+//        }
 
         FilesBrowser fileBrowser = new FilesBrowser();
         String[] filePaths = fileBrowser.browseFiles();
@@ -49,6 +48,7 @@ public class BatchFileRenamer {
         System.out.println("4. File Type");
         System.out.println("5. File Name SHA-512 Hash");
         System.out.println("\nEnter the naming scheme number:");
+        Scanner scanner = new Scanner(System.in);
         int schemeNumber = scanner.nextInt();
         scanner.nextLine(); // Consume the newline character
 
@@ -80,13 +80,23 @@ public class BatchFileRenamer {
             System.out.println(files[i].getName() + " -> " + renamedFiles[i]);
         }
     }
-
     private static String[] renameNumbered(File[] files) {
         String[] renamedFiles = new String[files.length];
         for (int i = 0; i < files.length; i++) {
-            String extension = getFileExtension(files[i]);
-            renamedFiles[i] = (i + 1) + extension;
-            files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            FileToProcess fileToProcess = null;
+            try {
+                fileToProcess = new FileToProcess(files[i].getAbsolutePath());
+            } catch (IOException e) {
+                System.out.println("Error reading file: " + files[i].getName());
+                e.printStackTrace();
+                continue;
+            }
+            String extension = fileToProcess.getFileExtension();
+            renamedFiles[i] = getUniqueFileName(i + 1 +"." + extension, files[i].getParent());
+            boolean success = files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            if (!success) {
+                System.out.println("Error renaming file: " + files[i].getName());
+            }
         }
         return renamedFiles;
     }
@@ -103,9 +113,12 @@ public class BatchFileRenamer {
                 continue;
             }
             String creationTime = fileToProcess.getStringFileCreationTime();
-            String extension = getFileExtension(files[i]);
-            renamedFiles[i] = creationTime + extension;
-            files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            String extension = fileToProcess.getFileExtension();
+            renamedFiles[i] = getUniqueFileName(creationTime +"." + extension, files[i].getParent());
+            boolean success = files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            if (!success) {
+                System.out.println("Error renaming file: " + files[i].getName());
+            }
         }
         return renamedFiles;
     }
@@ -122,9 +135,12 @@ public class BatchFileRenamer {
                 continue;
             }
             String fileSize = fileToProcess.getFileSize();
-            String extension = getFileExtension(files[i]);
-            renamedFiles[i] = fileSize + extension;
-            files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            String extension = fileToProcess.getFileExtension();
+            renamedFiles[i] = getUniqueFileName(fileSize +"." + extension, files[i].getParent());
+            boolean success = files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            if (!success) {
+                System.out.println("Error renaming file: " + files[i].getName());
+            }
         }
         return renamedFiles;
     }
@@ -141,9 +157,12 @@ public class BatchFileRenamer {
                 continue;
             }
             String fileType = fileToProcess.getFileType();
-            String extension = getFileExtension(files[i]);
-            renamedFiles[i] = fileType + extension;
-            files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            String extension = fileToProcess.getFileExtension();
+            renamedFiles[i] = getUniqueFileName(fileType +"." + extension, files[i].getParent());
+            boolean success = files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            if (!success) {
+                System.out.println("Error renaming file: " + files[i].getName());
+            }
         }
         return renamedFiles;
     }
@@ -162,15 +181,34 @@ public class BatchFileRenamer {
             String fileExtension = fileToProcess.getFileExtension();
             String fileName = fileToProcess.getFileName();
             String sha512Hash = SHA512_HashGenerator.generateHash(fileName);
-            renamedFiles[i] = sha512Hash + fileExtension;
-            files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            renamedFiles[i] = getUniqueFileName(sha512Hash + "." + fileExtension, files[i].getParent());
+            boolean success = files[i].renameTo(new File(files[i].getParent(), renamedFiles[i]));
+            if (!success) {
+                System.out.println("Error renaming file: " + files[i].getName());
+            }
         }
         return renamedFiles;
     }
 
-    private static String getFileExtension(File file) {
-        String name = file.getName();
-        int lastDotIndex = name.lastIndexOf(".");
-        return (lastDotIndex != -1) ? name.substring(lastDotIndex) : "";
+    // Utility method to extract the file extension from the file name
+    private static String getFileExtensionFromString(String fileName) {
+        int lastDotIndex = fileName.lastIndexOf(".");
+        return (lastDotIndex != -1) ? fileName.substring(lastDotIndex) : "";
     }
+
+    // Utility method to generate a unique file name by adding a suffix (n) if necessary
+    private static String getUniqueFileName(String fileName, String directoryPath) {
+        String baseName = fileName;
+        String extension = getFileExtensionFromString(fileName);
+        String uniqueName = fileName;
+        int counter = 1;
+
+        while (new File(directoryPath, uniqueName).exists()) {
+            uniqueName = baseName + "(" + counter + ")" +"." + extension;
+            counter++;
+        }
+
+        return uniqueName;
+    }
+
 }

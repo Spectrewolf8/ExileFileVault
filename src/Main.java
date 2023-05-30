@@ -1,3 +1,4 @@
+import BatchFileRenamerPackage.BatchFileRenamer;
 import VaultPackage.FilesProcessorPackage.FilesInVaultManager;
 
 import javax.crypto.BadPaddingException;
@@ -19,8 +20,8 @@ public class Main {
 //        fileVaultProcessor.vault(filesBrowser.browseFile(),"password",false);
 
 
-        new FilesInVaultManager().printFilesList();
-        new FilesInVaultManager().getFileAtIndex(0).printFileDetails();
+//        new FilesInVaultManager().printFilesList();
+//        new FilesInVaultManager().getFileAtIndex(0).printFileDetails();
 
 
 //        System.out.println("Enter index of file to unvault");
@@ -29,6 +30,8 @@ public class Main {
 //        new FilesInVaultManager().listFilesInVault();
 
         //fileVaultProcessor.unVault("D:\\My Codes\\Java\\OOSE Semester Project FileHub\\ExileFileVault\\192695a757c@37391071708900ENC.-inc","Shit\\Unvaulted.jpg","password");
+        BatchFileRenamer batchFileRenamer = new BatchFileRenamer();
+        batchFileRenamer.test();
         System.exit(0);
     }
 }

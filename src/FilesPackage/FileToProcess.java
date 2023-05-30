@@ -34,7 +34,7 @@ public class FileToProcess implements Serializable {
         absoluteFilePath = Paths.get(file.getAbsolutePath());
         fileAttributes = Files.getFileAttributeView(absoluteFilePath, BasicFileAttributeView.class).readAttributes();
         fileCreationTime = fileAttributes.creationTime();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH;mm;ss");
         stringFileCreationTime = simpleDateFormat.format((fileCreationTime.toMillis()));
         fileModifiedTime = fileAttributes.lastModifiedTime();
         stringFileModifiedTime = simpleDateFormat.format((fileModifiedTime.toMillis()));

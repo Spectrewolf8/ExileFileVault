@@ -5,7 +5,7 @@ import java.io.File;
 
 public class FilesBrowser {
     public String browseFile() {
-        DialogB frame = new DialogB();
+        JFrame frame = new JFrame();
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
@@ -30,7 +30,7 @@ public class FilesBrowser {
     }
 
     public String[] browseFiles() {
-        DialogB frame = new DialogB();
+        JFrame frame = new JFrame();
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
@@ -58,8 +58,6 @@ public class FilesBrowser {
         }
     }
 
-    public class DialogB extends JFrame {
-    }
 }
 
 
