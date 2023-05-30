@@ -1,4 +1,4 @@
-package FilesProcessorPackage;
+package VaultPackage.FilesProcessorPackage;
 
 import FilesPackage.FileToProcess;
 

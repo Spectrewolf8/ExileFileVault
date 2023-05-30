@@ -1,4 +1,4 @@
-package FilesProcessorPackage;
+package VaultPackage.FilesProcessorPackage;
 
 import java.io.*;
 import java.util.ArrayList;
