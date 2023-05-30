@@ -6,36 +6,6 @@ import java.util.List;
 
 import FilesPackage.FileToProcess;
 
-class LogFile implements Serializable {
-    LogFile(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) {
-        this.fileToProcess = fileToProcess;
-        this.fileOriginPath = fileOriginPath;
-        this.fileDestinationPath = fileDestinationPath;
-        this.passwordHash = passwordHash;
-    }
-
-    private transient FileToProcess fileToProcess;
-    private String fileOriginPath;
-    private String fileDestinationPath;
-    private String passwordHash;
-
-    public FileToProcess getFileToProcess() {
-        return fileToProcess;
-    }
-
-    public String getFileDestinationPath() {
-        return fileDestinationPath;
-    }
-
-    public String getFileOriginPath() {
-        return fileOriginPath;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-}
-
 public class FilesInVaultManager {
     String logFilePath = "bin\\inventory.bin";
     List<LogFile> filesInVault = new ArrayList<>();
@@ -48,7 +18,12 @@ public class FilesInVaultManager {
 //        writeObjectsToFile();
 //    }
     public void addFileToVault(FileToProcess fileToProcess, String fileOriginPath, String fileDestinationPath, String passwordHash) throws IOException, ClassNotFoundException {
-        readFilesListFromFile(); // Read the existing files from the file
+        // Read the existing files from the file
+        try {
+            readFilesListFromFile();
+        } catch (EOFException e) {
+            System.out.println("Skipping reading since file is empty");
+        }
 
         LogFile fileToAdd = new LogFile(fileToProcess, fileOriginPath, fileDestinationPath, passwordHash);
         filesInVault.add(fileToAdd); // Add the new file to the list
@@ -102,8 +77,6 @@ public class FilesInVaultManager {
 //            e.printStackTrace();
 //        }
 //    }
-//
-//
 //    public void readObjectsFromFile() {
 //        filesInVault.clear(); // Clear the existing list before reading the objects
 //        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(logFilePath))) {
@@ -179,6 +152,7 @@ public class FilesInVaultManager {
             filesInVault = (ArrayList<LogFile>) ois.readObject();
         }
     }
+
 
     private void writeFilesListToFile() throws IOException {
         try (FileOutputStream fos = new FileOutputStream(logFilePath);

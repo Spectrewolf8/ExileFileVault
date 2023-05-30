@@ -23,7 +23,7 @@ public class CompressionModule {
         this.compressionLevel = compressionLevel;
     }
 
-    public void compressToZip(FileToCompress fileToProcess, String filePassword) {
+    public void compressToZipWithPassword(FileToCompress fileToProcess, String filePassword) {
         // Try block to check if any exception occurs
         try {
 
@@ -89,6 +89,38 @@ public class CompressionModule {
 
     }
 
+    public void compressToZipWithoutPassword(FileToCompress fileToProcess) {
+        try {
+            ZipParameters zipParameters = new ZipParameters();
+            zipParameters.setCompressionMethod(CompressionMethod.DEFLATE);
+
+            // setting compression level of files
+            if (compressionLevel == 0) {
+                zipParameters.setCompressionLevel(CompressionLevel.FASTEST);
+            } else if (compressionLevel == 1) {
+                zipParameters.setCompressionLevel(CompressionLevel.NORMAL);
+            } else if (compressionLevel == 2) {
+                zipParameters.setCompressionLevel(CompressionLevel.ULTRA);
+            }
+
+            ZipFile zipFile = new ZipFile(fileToProcess.getDestinationPath());
+            ProgressMonitor progressMonitor = zipFile.getProgressMonitor();
+
+            zipFile.setRunInThread(true);
+            if (fileToProcess.getFile().isFile()) {
+                zipFile.addFile(fileToProcess.getFile(), zipParameters);
+            } else if (fileToProcess.getFile().isDirectory()) {
+                zipFile.addFolder(fileToProcess.getFile(), zipParameters);
+            }
+            zipFile.setRunInThread(false);
+
+            System.out.println("Zip file has been created at " + fileToProcess.getDestinationPath().toString());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void runCompressionProgressStats() throws InterruptedException {
         while (!progressMonitor.getState().equals(ProgressMonitor.State.READY)) {
@@ -112,6 +144,7 @@ public class CompressionModule {
         zipFile.setRunInThread(false);//ending zipfile's thread
 
     }
+
     public ZipFile getZipFile() {
         return zipFile;
     }

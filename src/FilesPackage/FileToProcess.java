@@ -2,6 +2,7 @@ package FilesPackage;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serial;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,12 +13,15 @@ import java.nio.file.attribute.FileTime;
 import java.text.SimpleDateFormat;
 
 public class FileToProcess implements Serializable {
-    private BasicFileAttributes fileAttributes;
-    private FileTime fileCreationTime;
-    private FileTime fileModifiedTime;
+    //    private static final long serialVersionUID = 6529685098267757690L;
+    @Serial
+    private static final long serialVersionUID = 1545032115648844594L;
+    private transient BasicFileAttributes fileAttributes;
+    private transient FileTime fileCreationTime;
+    private transient FileTime fileModifiedTime;
     private String stringFileCreationTime;
     private String stringFileModifiedTime;
-    private Path absoluteFilePath;
+    private transient Path absoluteFilePath;
     private File file;
     private String fileSize;
     private String fileName;
@@ -48,9 +52,11 @@ public class FileToProcess implements Serializable {
     public String getStringFileCreationTime() {
         return stringFileCreationTime;
     }
+
     public String getStringFileModifiedTime() {
         return stringFileModifiedTime;
     }
+
     public File getFile() {
         return file;
     }
@@ -74,7 +80,8 @@ public class FileToProcess implements Serializable {
     public String getFileName() {
         return fileName;
     }
-    public String getFileExtension(){
+
+    public String getFileExtension() {
         int dotIndex = fileName.lastIndexOf('.');
         if (dotIndex == -1) {
             return "";
@@ -82,7 +89,8 @@ public class FileToProcess implements Serializable {
             return fileName.substring(dotIndex + 1);
         }
     }
-    public void printAllProperties(){
+
+    public void printAllProperties() {
         System.out.println("File name: " + fileName);
         System.out.println("File extension: " + getFileExtension());
         System.out.println("File size: " + fileSize);
@@ -90,6 +98,7 @@ public class FileToProcess implements Serializable {
         System.out.println("File creation time: " + stringFileCreationTime);
         System.out.println("File modified time: " + stringFileModifiedTime);
     }
+
     public String getFileType() {
         return fileType;
     }

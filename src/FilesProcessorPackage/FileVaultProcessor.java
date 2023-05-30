@@ -30,7 +30,7 @@ public class FileVaultProcessor {
             FileToCompress fileToCompress = new FileToCompress(filePathToVault, "tempCompressedFileToEncrypt.zip");
             System.out.println("tempCompressedFileToEncrypt.zip created");
             CompressionModule compressor = new CompressionModule();
-            compressor.compressToZip(fileToCompress, Password);
+            compressor.compressToZipWithPassword(fileToCompress, Password);
             compressor.runCompressionProgressStats();
             fileToCompress.getFile().delete();//delete the file from original location as it has been moved to vault
 
@@ -94,7 +94,7 @@ public class FileVaultProcessor {
 
             //decompressing files
             DeCompressionModule deCompressor = new DeCompressionModule();
-            deCompressor.decompressZip(fileToDecompress, newFilePath + "Unvaulted.jpg", Password);
+            deCompressor.decompressZipWithPassword(fileToDecompress, newFilePath + "Unvaulted.jpg", Password);
 
             //Deleting Compressed File
             FileToProcess fileToDelete0 = new FileToProcess(filePathToUnVault);

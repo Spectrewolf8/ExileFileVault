@@ -8,7 +8,7 @@ import org.apache.commons.io.FilenameUtils;
 
 public class DeCompressionModule {
 
-    public void decompressZip(FileToDeCompress fileToProcess, String originFilePathToDecompressTo, String Password) throws ZipException, InterruptedException {
+    public void decompressZipWithPassword(FileToDeCompress fileToProcess, String originFilePathToDecompressTo, String Password) throws ZipException, InterruptedException {
         //new ZipFile(String.valueOf(fileToProcess.getAbsoluteFilePath()), Password.toCharArray()).extractAll(String.valueOf(fileToProcess.getAbsoluteFilePath()).replace(".zip", ""));
         //System.out.println(FilenameUtils.removeExtension(String.valueOf(fileToProcess.getAbsoluteFilePath())));
         //new ZipFile(String.valueOf(fileToProcess.getAbsoluteFilePath())).extractAll(FilenameUtils.removeExtension(String.valueOf(fileToProcess.getAbsoluteFilePath())));//FilenameUtils.removeExtension(fileNameWithExt);
@@ -45,4 +45,36 @@ public class DeCompressionModule {
         System.out.println(originFilePathToDecompressTo);
 
     }
+    public void decompressZipWithoutPassword(FileToDeCompress fileToProcess, String originFilePathToDecompressTo) throws ZipException, InterruptedException {
+        ZipFile zipFile = new ZipFile(fileToProcess.getFile());
+        zipFile.setRunInThread(true);
+        ProgressMonitor progressMonitor = zipFile.getProgressMonitor();
+
+        if (zipFile.isValidZipFile()) {
+            zipFile.extractAll(FilenameUtils.removeExtension(originFilePathToDecompressTo));
+        } else {
+            System.out.println("Invalid zip file");
+        }
+
+        while (!progressMonitor.getState().equals(ProgressMonitor.State.READY)) {
+            System.out.println("Percentage done: " + progressMonitor.getPercentDone());
+            System.out.println("Current file: " + progressMonitor.getFileName());
+            System.out.println("Current task: " + progressMonitor.getCurrentTask());
+            Thread.sleep(200);
+        }
+
+        if (progressMonitor.getResult().equals(ProgressMonitor.Result.SUCCESS)) {
+            System.out.println("Successfully extracted files/folders from zip");
+        } else if (progressMonitor.getResult().equals(ProgressMonitor.Result.ERROR)) {
+            System.out.println("Error occurred. Error message: " + progressMonitor.getException().getMessage());
+        } else if (progressMonitor.getResult().equals(ProgressMonitor.Result.CANCELLED)) {
+            System.out.println("Task cancelled");
+        }
+
+        progressMonitor.endProgressMonitor();
+        zipFile.setRunInThread(false);
+
+        System.out.println(originFilePathToDecompressTo);
+    }
+
 }
