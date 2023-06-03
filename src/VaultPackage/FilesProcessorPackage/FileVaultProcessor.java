@@ -25,6 +25,10 @@ public class FileVaultProcessor {
     private FilesInVaultManager filesInVaultManager = new FilesInVaultManager();
 
     public void vault(String filePathToVault, String Password, Boolean requireCompression) throws IOException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException, ClassNotFoundException {
+        if (filePathToVault == null) {
+            System.out.println("File Path is null");
+            return;
+        }
         FileToProcess fileBeingAddedToVault = new FileToProcess(filePathToVault);
         if (requireCompression) {
             FileToCompress fileToCompress = new FileToCompress(filePathToVault, "tempCompressedFileToEncrypt.zip");
@@ -73,6 +77,10 @@ public class FileVaultProcessor {
     //Path path = FileSystems.getDefault().getPath("/j", "sa");
 //Files.setAttribute(path, "dos:hidden", true);
     public void unVault(String filePathToUnVault, String originFilePath, String Password) throws IOException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InterruptedException {
+        if (filePathToUnVault == null) {
+            System.out.println("File Path is null");
+            return;
+        }
         //Unhiding file and making it re-writeable again
         FileToProcess fileToProcess_UnHide = new FileToProcess(filePathToUnVault);
         Files.setAttribute(fileToProcess_UnHide.getAbsoluteFilePath(), "dos:hidden", false);

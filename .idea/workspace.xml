@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="sixth commit, Packages have been re-arranged,and batch file renamer has been added">
-      <change afterPath="$PROJECT_DIR$/42ff14ec7ec@6427451894500ENC.-inc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shit/Unvaulted.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shit/Unvaulted/IMG_20211026_132039_263_2 - Copy - Copy (4).jpg" afterDir="false" />
+    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="seventh commit, batch file renamer is working perfectly fine now">
+      <change afterPath="$PROJECT_DIR$/../ExileFileVault - fucked" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/pdfbox-2.0.28.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/poi-ooxml-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FileConverterPackage/FileConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BatchFileRenamerPackage/BatchFileRenamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BatchFileRenamerPackage/BatchFileRenamer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FilesBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FilesBrowser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/credentials.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FileVaultProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FileVaultProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +28,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -41,29 +42,48 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/spectrewolf8/MyJavaProjects/ExileFileVault/Assets&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/My Codes/Java/OOSE Semester Project FileHub/ExileFileVault/Assets/poi-ooxml-5.2.3.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\Assets" />
+      <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\src\FilesPackage\FileClassses" />
+      <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\src\FilesPackage\FileConversionPackage" />
       <recent name="$PROJECT_DIR$/Assets" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\Assets" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="FileConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilesPackage.FIleConversionPackage.FileConverter" />
+      <module name="ExileFileVault" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FilesPackage.FileConversionPackage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ExileFileVault" />
@@ -74,6 +94,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.FileConverter" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685459121666</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="seventh commit, batch file renamer is working perfectly fine now">
+      <created>1685464875140</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685464875140</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,7 +185,8 @@
     <MESSAGE value="Fourth commit, files are being read and written prooperly, but the fileToProcess class in logiles class ws read null when read from the file" />
     <MESSAGE value="Fifth commit, all the issues have been fixed and compression and decompression with and without password has been added" />
     <MESSAGE value="sixth commit, Packages have been re-arranged,and batch file renamer has been added" />
-    <option name="LAST_COMMIT_MESSAGE" value="sixth commit, Packages have been re-arranged,and batch file renamer has been added" />
+    <MESSAGE value="seventh commit, batch file renamer is working perfectly fine now" />
+    <option name="LAST_COMMIT_MESSAGE" value="seventh commit, batch file renamer is working perfectly fine now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -165,6 +194,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.io.NotSerializableException" package="java.io" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
