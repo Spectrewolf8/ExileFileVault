@@ -4,15 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="seventh commit, batch file renamer is working perfectly fine now">
-      <change afterPath="$PROJECT_DIR$/../ExileFileVault - fucked" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/pdfbox-2.0.28.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/poi-ooxml-5.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileConverterPackage/FileConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="Eight commit, added file converter but still needs to be tested and some bugs to be fixed">
+      <change afterPath="$PROJECT_DIR$/../../ElgantGUI test/ElgantGUI test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../FileHandlingTest/FileHandlingTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../GUItest/GUItest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JavaFileShareSocketsScrape/JavaFileShareSocketsScrape.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LAB Terminal/Terminal.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LAB9/LAB9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabAssignment3/LabAssignment3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabMidOop/LabMidOop.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabTest2/LabTest2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../My Codes.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../OOP Lab8/OOP Lab8.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../OOP assingment 3/OOP assingment 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../OOP lab 6/OOP lab 6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../OOP_Assignment3/OOP_Assignment3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Spire_Pdf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0. Software Scope Documnet_Revised.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Spire.Pdf.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FileConverterPackage/FileConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Semester Project SEM2/Semester Project SEM2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEST12/TEST12.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Test2 OOP/Test2 OOP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Testc11/Testc11.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Text1x1/Text1x1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaStacks/javaStacks.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../out/production/My Codes/My Codes.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../saif - assignment4/saif - assignment4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../untitled1/untitled1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExileFileVault - fucked" beforeDir="false" afterPath="$PROJECT_DIR$/../ExileFileVault - fucked" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_io_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/zip4j_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/credentials.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FileVaultProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FileVaultProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/pdfbox-2.0.28.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/poi-ooxml-5.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExileFileVault.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ExileFileVault.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BatchFileRenamerPackage/BatchFileRenamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BatchFileRenamerPackage/BatchFileRenamer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompressionDecompressionPackage/CompressionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CompressionDecompressionPackage/CompressionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompressionDecompressionPackage/DeCompressionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CompressionDecompressionPackage/DeCompressionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileConverterPackage/FileConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToCompress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FilesPackage/FileToCompress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToDeCompress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FilesPackage/FileToDeCompress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToDeCrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FilesPackage/FileToDeCrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToEncrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FilesPackage/FileToEncrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilesPackage/FileToProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FilesPackage/FileToProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/EncryptionDecryptionPackage/AESFileDecryptionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VaultPackage/EncryptionDecryptionPackage/AESFileDecryptionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/EncryptionDecryptionPackage/AESFileEncryptionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VaultPackage/EncryptionDecryptionPackage/AESFileEncryptionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FileVaultProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VaultPackage/FilesProcessorPackage/FileVaultProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FilesBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VaultPackage/FilesProcessorPackage/FilesBrowser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/FilesInVaultManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VaultPackage/FilesProcessorPackage/FilesInVaultManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/FilesProcessorPackage/LogFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VaultPackage/FilesProcessorPackage/LogFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VaultPackage/HashPackage/SHA512_HashGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VaultPackage/HashPackage/SHA512_HashGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,20 +97,20 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/My Codes/Java/OOSE Semester Project FileHub/ExileFileVault/Assets/poi-ooxml-5.2.3.jar",
+    "last_opened_file_path": "D:/My Codes/Java/OOSE Semester Project FileHub/ExileFileVault/Assets/Spire.Pdf.jar",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.proportion": "0.15332031",
+    "project.structure.side.proportion": "0.4",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\Assets" />
+      <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault" />
       <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\src\FilesPackage\FileClassses" />
       <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\src\FilesPackage\FileConversionPackage" />
       <recent name="$PROJECT_DIR$/Assets" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\Assets" />
@@ -163,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685464875140</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Eight commit, added file converter but still needs to be tested and some bugs to be fixed">
+      <created>1685772653195</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685772653195</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,7 +239,8 @@
     <MESSAGE value="Fifth commit, all the issues have been fixed and compression and decompression with and without password has been added" />
     <MESSAGE value="sixth commit, Packages have been re-arranged,and batch file renamer has been added" />
     <MESSAGE value="seventh commit, batch file renamer is working perfectly fine now" />
-    <option name="LAST_COMMIT_MESSAGE" value="seventh commit, batch file renamer is working perfectly fine now" />
+    <MESSAGE value="Eight commit, added file converter but still needs to be tested and some bugs to be fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eight commit, added file converter but still needs to be tested and some bugs to be fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

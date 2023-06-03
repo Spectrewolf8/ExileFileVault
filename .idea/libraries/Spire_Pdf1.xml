@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Spire.Pdf1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Assets/Spire.Pdf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
