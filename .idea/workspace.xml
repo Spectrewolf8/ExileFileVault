@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="9th commit, maven was added but file converter still needs ot be fixed">
-      <change afterPath="$PROJECT_DIR$/0. Software Scope Documnet_Revised.docx" afterDir="false" />
+    <list default="true" id="893fa472-5a24-45c0-8d18-1cdb37955d3c" name="Changes" comment="10th commit, using python approach with java for file conversion">
       <change afterPath="$PROJECT_DIR$/0. Software Scope Documnet_Revised.pdf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/R634080006StickerMuleInvoiceForSpec.docx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/R634080006StickerMuleInvoiceForSpec.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FileConverterPackage/script.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestWordFile.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestWordFile.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ExileFileVault - fucked" beforeDir="false" afterPath="$PROJECT_DIR$/../ExileFileVault - fucked" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Spire_Pdf1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_io_2_11_01.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/zip4j_2_11_31.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FileConverterPackage/FileConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileConverterPackage/FileConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileConverterPackage/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileConverterPackage/script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,13 +74,13 @@
       <recent name="D:\My Codes\Java\OOSE Semester Project FileHub\ExileFileVault\Assets" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="FileConverterPackage.FileConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FileConverterPackage.FileConverter" />
+  <component name="RunManager" selected="Application.FileConverterPackage.FileConverter">
+    <configuration name="FileConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilesPackage.FIleConversionPackage.FileConverter" />
       <module name="ExileFileVault" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FileConverterPackage.*" />
+          <option name="PATTERN" value="FilesPackage.FileConversionPackage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,12 +88,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FilesPackage.FIleConversionPackage.FileConverter" />
+    <configuration name="FileConverterPackage.FileConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FileConverterPackage.FileConverter" />
       <module name="ExileFileVault" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilesPackage.FileConversionPackage.*" />
+          <option name="PATTERN" value="FileConverterPackage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,6 +108,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="script" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/java/FileConverterPackage" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/java/FileConverterPackage/script.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FileConverterPackage.FileConverter" />
+        <item itemvalue="Application.FileConverter" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -214,20 +240,7 @@
     <MESSAGE value="seventh commit, batch file renamer is working perfectly fine now" />
     <MESSAGE value="Eight commit, added file converter but still needs to be tested and some bugs to be fixed" />
     <MESSAGE value="9th commit, maven was added but file converter still needs ot be fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="9th commit, maven was added but file converter still needs ot be fixed" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.io.NotSerializableException" package="java.io" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="10th commit, using python approach with java for file conversion" />
+    <option name="LAST_COMMIT_MESSAGE" value="10th commit, using python approach with java for file conversion" />
   </component>
 </project>
