@@ -24,7 +24,7 @@ import java.sql.Time;
 public class FileVaultProcessor {
 
     private String encryptedDestinationPath;
-    private FilesInVaultManager filesInVaultManager;
+    private final FilesInVaultManager filesInVaultManager;
 
     public FileVaultProcessor() throws IOException, ClassNotFoundException {
         filesInVaultManager = new FilesInVaultManager();
@@ -88,7 +88,14 @@ public class FileVaultProcessor {
             return;
         }
         //Unhiding file and making it re-writeable again
-        FileToProcess fileToProcess_UnHide = new FileToProcess(filePathToUnVault);
+        FileToProcess fileToProcess_UnHide;
+        try {
+          fileToProcess_UnHide = new FileToProcess(filePathToUnVault);
+
+        }catch (Exception e){
+            System.out.println("File eiter deleted, does not exist or is not in vault(clearing current entry from vault)");
+            return;
+        }
         Files.setAttribute(fileToProcess_UnHide.getAbsoluteFilePath(), "dos:hidden", false);
         fileToProcess_UnHide.getFile().setWritable(true);
         //Decrypting file
@@ -97,7 +104,7 @@ public class FileVaultProcessor {
         aesFileDecryptionModule.decryptWithEcb(fileToDeCrypt, Password);
         if (new net.lingala.zip4j.ZipFile("tempDeCryptedFileToProcess").isValidZipFile()) {
             new File("tempDeCryptedFileToProcess").renameTo(new File("tempDeCryptedFileToUncompress.zip"));
-            System.out.printf("Zip file is valid");
+            System.out.print("Zip file is valid");
             //Decompressing file
             FileToDeCompress fileToDecompress = new FileToDeCompress("tempDeCryptedFileToUncompress.zip");//creating a file to decompress
 

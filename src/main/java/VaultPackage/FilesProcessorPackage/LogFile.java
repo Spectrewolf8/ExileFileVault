@@ -16,6 +16,15 @@ public class LogFile implements Serializable {
     @Serial
     private static final long serialVersionUID = 1545032115648844594L;
 
+    public String getFileOwnerUsername() {
+        return fileOwnerUsername;
+    }
+
+    public void setFileOwnerUsername(String fileOwnerUsername) {
+        this.fileOwnerUsername = fileOwnerUsername;
+    }
+
+    private String fileOwnerUsername;
     private FileToProcess fileToProcess;
     private String fileOriginPath;
     private String fileDestinationPath;

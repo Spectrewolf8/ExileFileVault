@@ -6,12 +6,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class FileConverter {
-    public static void main(String[] args) {
-        String pythonScriptPath = "D:\\My Codes\\Java\\OOSE Semester Project FileHub\\ExileFileVault\\src\\main\\java\\FileConverterPackage\\script.py";
-        String filePath = "TestWordFile.docx";
-        String destinationPath = "TestWordFile.pdf";
-        // 0 for docx_to_pdf, 1 for pdf_to_docx
-        int conversionType = 0;  // or "docx_to_pdf"
+    public static void convertFile(String filePath, String destinationPath, int conversionType) throws IOException, InterruptedException {
+        String pythonScriptPath = "src\\main\\java\\FileConverterPackage\\script.py";
+//        String filePath = "TestWordFile.docx";
+//        String destinationPath = "TestWordFile.pdf";
+//        // 0 for docx_to_pdf, 1 for pdf_to_docx
+//        int conversionType = 0;  // or "docx_to_pdf"
 
         try {
             ProcessBuilder processBuilder = new ProcessBuilder("python", pythonScriptPath, filePath, destinationPath, conversionType + "");

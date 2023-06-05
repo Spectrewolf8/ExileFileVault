@@ -3,7 +3,7 @@ import os
 import docx2pdf
 from pdf2docx import Converter
 
-
+# this script is called from original app FileHub as a subprocess.
 def convert_pdf_to_docx(file_path, destination_path):
     cv = Converter(file_path)
     cv.convert(destination_path, start=0, end=None)
@@ -15,10 +15,10 @@ def convert_docx_to_pdf(file_path, destination_path):
 
 
 def convert_file(file_path, destination_path, conversion_type):
-    if conversion_type == "pdf_to_docx":
+    if conversion_type == str(1):
         convert_pdf_to_docx(file_path, destination_path)
         print("PDF to DOCX conversion completed.")
-    elif conversion_type == "docx_to_pdf":
+    elif conversion_type == str(0):
         convert_docx_to_pdf(file_path, destination_path)
         print("DOCX to PDF conversion completed.")
     else:
@@ -33,9 +33,9 @@ if __name__ == "__main__":
     if os.path.isfile(file_path):
         file_extension = os.path.splitext(file_path)[1]
 
-        if conversion_type == "pdf_to_docx" and file_extension == ".pdf":
+        if conversion_type == str(1) and file_extension == ".pdf":
             convert_file(file_path, destination_path, conversion_type)
-        elif conversion_type == "docx_to_pdf" and file_extension == ".docx":
+        elif conversion_type == str(0) and file_extension == ".docx":
             convert_file(file_path, destination_path, conversion_type)
         else:
             print("Invalid file extension for the chosen conversion type.")

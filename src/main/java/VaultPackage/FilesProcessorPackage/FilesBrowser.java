@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.io.File;
 
 public class FilesBrowser {
-    public String browseFile() {
-        JFrame frame = new JFrame();
+    public String browseFileOrFolder() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
@@ -13,24 +12,82 @@ public class FilesBrowser {
         }
 
         JFileChooser fileChooser = new JFileChooser();
-
         fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        int result = fileChooser.showOpenDialog(frame);
-        File selectedFile = null;
+        int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
-            selectedFile = fileChooser.getSelectedFile();
-            //System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+            File selectedFile = fileChooser.getSelectedFile();
+            if (selectedFile != null) {
+                return selectedFile.getAbsolutePath();
+            }
         }
-        if (selectedFile != null) {
-            return selectedFile.getAbsolutePath();
-        } else {
-            return "";
+        return "";
+    }
+    public String browseFolderOnly(){
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        int result = fileChooser.showOpenDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            if (selectedFile != null) {
+                return selectedFile.getAbsolutePath();
+            }
+        }
+        return "";
+    }
+    public String browseFileOnly() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        int result = fileChooser.showOpenDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            if (selectedFile != null) {
+                return selectedFile.getAbsolutePath();
+            }
+        }
+        return "";
     }
 
-    public String[] browseFiles() {
-        JFrame frame = new JFrame();
+    public String[] browseFilesOnly() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setMultiSelectionEnabled(true);
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        int result = fileChooser.showOpenDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File[] selectedFiles = fileChooser.getSelectedFiles();
+            if (selectedFiles != null && selectedFiles.length > 0) {
+                String[] filePaths = new String[selectedFiles.length];
+                for (int i = 0; i < selectedFiles.length; i++) {
+                    filePaths[i] = selectedFiles[i].getAbsolutePath();
+                }
+                return filePaths;
+            }
+        }
+        return new String[0];
+    }
+
+    public String[] browseFilesOrFolders() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
@@ -41,23 +98,17 @@ public class FilesBrowser {
         fileChooser.setMultiSelectionEnabled(true);
         fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        int result = fileChooser.showOpenDialog(frame);
-        File[] selectedFiles = null;
+        int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
-            selectedFiles = fileChooser.getSelectedFiles();
-            //System.out.println("Selected files: " + Arrays.toString(selectedFiles));
-        }
-        if (selectedFiles != null && selectedFiles.length > 0) {
-            String[] filePaths = new String[selectedFiles.length];
-            for (int i = 0; i < selectedFiles.length; i++) {
-                filePaths[i] = selectedFiles[i].getAbsolutePath();
+            File[] selectedFiles = fileChooser.getSelectedFiles();
+            if (selectedFiles != null && selectedFiles.length > 0) {
+                String[] filePaths = new String[selectedFiles.length];
+                for (int i = 0; i < selectedFiles.length; i++) {
+                    filePaths[i] = selectedFiles[i].getAbsolutePath();
+                }
+                return filePaths;
             }
-            return filePaths;
-        } else {
-            return new String[0];
         }
+        return new String[0];
     }
-
 }
-
-

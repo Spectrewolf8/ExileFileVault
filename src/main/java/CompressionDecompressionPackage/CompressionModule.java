@@ -55,10 +55,7 @@ public class CompressionModule {
             new File(fileToProcess.getDestinationPath());
             zipFile = new ZipFile(fileToProcess.getDestinationPath());
             progressMonitor = zipFile.getProgressMonitor();
-            // Creating list of files to be added to ZIP file
-            //ArrayList<File> list = new ArrayList<>();
-            ////Add SPECIFIC files
-            //list.add(new File("D:\\Tenet.2020.720p.HDRip.900MB.x264-GalaxyRG[TGx]\\Tenet.2020.720p.HDRip.900MB.x264-GalaxyRG.mkv"));
+
 
 
             if (filePassword != null) {
@@ -102,9 +99,11 @@ public class CompressionModule {
             } else if (compressionLevel == 2) {
                 zipParameters.setCompressionLevel(CompressionLevel.ULTRA);
             }
-
+            // Creating ZIP file
+            new File(fileToProcess.getDestinationPath());
             ZipFile zipFile = new ZipFile(fileToProcess.getDestinationPath());
-            ProgressMonitor progressMonitor = zipFile.getProgressMonitor();
+            progressMonitor = zipFile.getProgressMonitor();
+
 
             zipFile.setRunInThread(true);
             if (fileToProcess.getFile().isFile()) {
